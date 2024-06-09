@@ -1,0 +1,31 @@
+import javax.servlet.ServletException;
+ import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
+ import javax.servlet.http.HttpServlet;
+ import javax.servlet.http.HttpServletRequest;
+ import javax.servlet.http.HttpServletResponse;
+ public class LogoutServlet extends HttpServlet { //@@ -30,6 31,24 @@
+ 		out.println("<title>Logout</title>");
+ 		out.println("</head>");
+ 		out.println("<body>");
+
+		String userName = "";
+		Cookie[] arr = req.getCookies();
+		if(arr != null) {
+			for (Cookie c : arr) {
+				if(c.getName().equals("uname")) {
+					userName = c.getValue();
+					break;
+				}
+			}
+		}
+		out.printf("Goodbye, %s<hr/>\n", userName);
+		
+		// delete persistent cookie
+		Cookie c = new Cookie("uname", "");
+		c.setMaxAge(-1);
+		resp.addCookie(c);
+		
+ 		out.println("Thank you for saving democracy. <br/><br/>");
+ 		out.println("<a href='index.html'>Login Again</a>");
+ 		out.println("</body>");

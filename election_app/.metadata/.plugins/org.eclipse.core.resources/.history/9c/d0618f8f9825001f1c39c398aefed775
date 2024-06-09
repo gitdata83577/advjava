@@ -1,0 +1,20 @@
+package com.sunbeam.daos;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+public interface class CandidateDao extends AutoCloseable
+{
+	int deleteById(int id) throws Exception;
+	List<Candidate> findAll() throws Exception;
+	int incrementVote(int candidateId) throws Exception;
+	List<Candidate> findByParty(String givenParty) throws Exception;
+	int save(Candidate c) throws Exception;
+	int update(Candidate c) throws Exception;
+	List<Candidate> getCandidatewiseVotes() throws Exception;
+}
