@@ -7,7 +7,8 @@
 <title>New User</title>
 </head>
 <body>
-	<h3>Online Voting</h3>
+	<%-- <h3>Online Voting</h3>--%>
+	<h3> ${ initParam.appTitle }</h3>
 	<form method = "post" action="register.jsp">
 		First Name: <input type="text" name="firstName"/><br/><br/>
 		Last Name: <input type="text" name="lastName"/><br/><br/>
