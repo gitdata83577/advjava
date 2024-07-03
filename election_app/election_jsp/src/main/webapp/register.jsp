@@ -9,6 +9,8 @@
 </head>
 <body>
 	<h3> ${initParam.appTitle}</h3>
+	<jsp:useBean id="rb" class="com.sunbeam.beans.RegistrationBean" scope="session"/>
+	<jsp:setProperty name="rb" property="*" />
 	<jsp:setProperty name="rb" property="status" value="0"/>
  	<jsp:setProperty name="rb" property="role" value="voter"/>
  	${ rb.registerUser() }

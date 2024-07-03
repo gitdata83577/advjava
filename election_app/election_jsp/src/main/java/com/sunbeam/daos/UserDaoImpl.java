@@ -10,6 +10,7 @@ package com.sunbeam.daos;
  	public UserDaoImpl() throws Exception {
  	}
  	public User findByEmail(String email) throws Exception {
+ 		System.out.println("Inside UserDao FindByEmail");
  		String sql = "SELECT * FROM users WHERE email=?";
  		try(PreparedStatement stmt = con.prepareStatement(sql)) {
  			stmt.setString(1, email);

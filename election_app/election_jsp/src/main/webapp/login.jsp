@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
-<%--<!DOCTYPE html>--%>
+
 <html>
 <head>
 <meta charset="ISO-8859-1">
@@ -13,7 +13,7 @@
 		<%--<% lb.authenticate();%> --%>
 	${ lb.authenticate()}
 	<c:choose>
-	<c:when test=" $ { lb.user.role == 'voter'}">
+	<c:when test="${ lb.user.role == 'voter'}">
 		<c:redirect url="Candlist.jsp"/>
 	</c:when>
 	<c:when test="${lb.user.role == 'admin'}">
@@ -30,28 +30,3 @@
 </body>
 </html>
 
-<%--
-<% if(lb.getUser() != null) {%> 
-		<%if(lb.getUser().getRole().equals("voter")) {%> 
-			<%-- <jsp:forward page="candlist.jsp"/> --%>
-			<%--<%response.sendRedirect("candlist.jsp");
-			<c:redirect url="candlist.jsp"/>
-		<%}else{%> 
-			 <jsp:forward page="result.jsp"/> 
-			<%response.sendRedirect("result.jsp"); 	
-			<c:redirect url="result.jsp"/>
-		<%} 
-		%>
-	<%}
-	 else
-		{%>
-		 <h3>Online Voting</h3>
-		Hello, <%-- <jsp:getProperty property="email" name="lb"/><br/>
-		
-		<h3>Online Voting</h3>
-		Hello, ${lb.emai}<br/>
-		Invalid email or password. <br/><br/>
-		<a href="index.jsp">Login Again</a>
-		<%}		
-	%>
-	 --%>

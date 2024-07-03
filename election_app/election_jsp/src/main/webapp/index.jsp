@@ -8,10 +8,10 @@
 </head>
 <body>
 	<%--<h3>Online Voting</h3>--%>
-	<h3>$(initParam.appTitle)</h3>
+	<h3>${initParam.appTitle}</h3>
 	<form method="post" action="login.jsp">
 		Email: <input type="text" name="email" /><br/><br/>
-		Password: <input type="text" name="passwd" /><br/><br/>
+		Password: <input type="password" name="passwd" /><br/><br/>
 		<input type="submit" Value="Sign in"/>
 		<a href="newuser.jsp">Sign Up</a>
 	</form>

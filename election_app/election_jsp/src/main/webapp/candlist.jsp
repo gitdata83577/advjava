@@ -18,10 +18,9 @@
 	${ clb.fetchCandidates() }        <%-- <% clb.fetchCandidates();%> --%>
 	<form method="post" action="vote.jsp">
 	
-	<c:forEach var="c" items="${clb.candidateList}">
-	<input type="radio" name="candidate" value="${c.id}"/> ${c.name} - ${c.party} <br/>
+	<c:forEach var="c" items="${clb.candidateList}}">
+		<input type="radio" name="candidate"  value="${c.ld}"/> - ${c.party}<br/>
 	</c:forEach>
-		
 		<br/>
 		<input type="submit" value="vote"/>
 	</form>
